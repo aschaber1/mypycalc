@@ -1,4 +1,5 @@
 import json
+import sys
 
 from flask import Flask, render_template, request
 
@@ -15,6 +16,10 @@ def post_mypycalc():
     result = a-b
     result_str = str(result)
     return render_template('form.html') + result_str, 201
+
+@api.route('/kill', methods=['POST'])
+def post_kill():
+    sys.exit(0)
 
 if __name__ == "__main__":
     api.run(host='0.0.0.0', port=8080)

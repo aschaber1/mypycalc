@@ -17,10 +17,6 @@ def post_mypycalc():
     result_str = str(result)
     return render_template('form.html') + result_str, 201
 
-@api.route('/kill', methods=['POST'])
-def post_kill():
-    sys.exit(0)
-
 if __name__ == "__main__":
     api.run(host='0.0.0.0', port=8080)
 

@@ -13,7 +13,7 @@ def get_mypycalc():
 def post_mypycalc():
     a = int(request.form['a'])
     b = int(request.form['b'])
-    result = a-b
+    result = a+b
     result_str = str(result)
     return render_template('form.html') + result_str, 201
 
